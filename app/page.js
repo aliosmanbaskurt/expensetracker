@@ -6,6 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Home() {
+  const euro = 30.12
+  const dolar = 28.12
   const [items, setItems] = useState([
     // { name: "Coffee", price: "4,95" },
     // { name: "Movie", price: "12,95" },
@@ -65,7 +67,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 p-4">
+    <main className="flex min-h-screen flex-col items-center justify-between sm:p-12 p-4">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm ">
         <h1 className="text-4xl p-4 text-center">Harcamanı Hesapla</h1>
         <div className="bg-slate-800 p-4 rounded-lg">
@@ -82,7 +84,7 @@ export default function Home() {
               onChange={(e) => setNewItem({...newItem, price:e.target.value})}
               className="col-span-2 p-3 border mx-3"
               type="text"
-              placeholder="Kaç TL"
+              placeholder="Kaç ₺"
             />
             <button
             
@@ -118,8 +120,12 @@ export default function Home() {
             ""
           ) : (
             <div className="flex justify-between p-3">
-              <span>Toplam</span>
-              <span>{total} ₺</span>
+              <span className="text-xl font-extrabold">Toplam:</span>
+              <span className='text-xl font-extrabold'>{(total/dolar).toFixed(2)} $</span>
+              <span className='text-xl font-extrabold'>{(total/euro).toFixed(2)} $</span>
+              <span className='text-xl font-extrabold'>{total} ₺</span>
+           
+
             </div>
           )}
         </div>
