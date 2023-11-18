@@ -126,7 +126,7 @@ export default function Home() {
       </div>
       <div>
         <div className="w-full flex flex-shrink-0 items-center justify-center mt-10">
-          <span className="font-mono">Kodlara ulaşmak için </span> 
+          <span className="font-mono">Kodlara ulaşmak için</span> 
           <Link className="ml-5" href="https://github.com/aliosmanbaskurt/expensetracker" target="self"> <FaGithub className="m-0 text-4xl items-center justify-center"/> </Link>
         </div>
             
