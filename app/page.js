@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { collection, addDoc,getDoc, query, onSnapshot,deleteDoc,doc } from "firebase/firestore";
 import { db } from "./firebase";
 import { FaGithub } from "react-icons/fa";
+import { MdAddShoppingCart } from "react-icons/md";
 import Link from "next/link";
 
 export default function Home() {
@@ -90,11 +91,12 @@ export default function Home() {
             
             onClick={addItem}
               className="text-white bg-slate-950
-          hover:bg-slate-900 p-3 text-xl"
+          hover:bg-slate-900 p-3 text-xl items-center justify-center inline-flex  w-full text-center mx-auto"
               type="sumbit"
               placeholder="Enter Item"
             >
-              +
+              <MdAddShoppingCart className="text-xl"/>
+              <span className="ml-2 hidden sm:block" >Ekle</span>
             </button>
           </form>
 
