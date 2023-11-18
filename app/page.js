@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { collection, addDoc,getDoc, query, onSnapshot,deleteDoc,doc } from "firebase/firestore";
 import { db } from "./firebase";
+import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Home() {
   const [items, setItems] = useState([
@@ -121,6 +123,13 @@ export default function Home() {
             </div>
           )}
         </div>
+      </div>
+      <div>
+        <div className="w-full flex flex-shrink-0 items-center justify-center mt-10">
+          <span className="font-mono">Kodlara ulaşmak için </span> 
+          <Link className="ml-5" href="https://github.com/aliosmanbaskurt/expensetracker" target="self"> <FaGithub className="m-0 text-4xl items-center justify-center"/> </Link>
+        </div>
+            
       </div>
     </main>
   );
