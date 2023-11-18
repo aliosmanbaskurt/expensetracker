@@ -99,6 +99,12 @@ export default function Home() {
           </form>
 
           <ul>
+            <li className="my-4 w-full flex justify-between bg-slate-950">
+              <div className="p-4  text-xl w-full flex justify-between">
+                <span className="capitalize underline">Harcama Adı</span>
+                <span className="underline">Harcama Miktarı ₺</span>
+              </div>
+            </li>
             {items.map((item, id) => (
               <li
                 key={id}
@@ -122,7 +128,7 @@ export default function Home() {
             <div className="flex justify-between p-3">
               <span className="text-xl font-extrabold">Toplam:</span>
               <span className='text-xl font-extrabold'>{(total/dolar).toFixed(2)} $</span>
-              <span className='text-xl font-extrabold'>{(total/euro).toFixed(2)} $</span>
+              <span className='text-xl font-extrabold'>{(total/euro).toFixed(2)} €</span>
               <span className='text-xl font-extrabold'>{total} ₺</span>
            
 
