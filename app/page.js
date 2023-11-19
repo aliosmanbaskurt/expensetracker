@@ -63,7 +63,11 @@ export default function Home() {
   //Delete items database
 
   const deleteItem = async(id) => {
-    await deleteDoc(doc(db,'items', id)) 
+    if (window.confirm("Silmek İstediğinize Emin Misiniz?")) {
+      await deleteDoc(doc(db,'items', id)) 
+    }
+  
+    
 
   }
 
@@ -76,14 +80,14 @@ export default function Home() {
             <input
               value={newItem.name}
               onChange={(e) => setNewItem({...newItem, name:e.target.value})}
-              className="col-span-3 p-3  border rounded-lg"
+              className="col-span-3 p-3  border rounded-lg text-l sm:text-3xl"
               type="text"
-              placeholder="Harcama Gir"
+              placeholder="Harcama Gir..."
             />
             <input
               value={newItem.price}
               onChange={(e) => setNewItem({...newItem, price:e.target.value})}
-              className="col-span-2 p-3 border mx-3 rounded-lg"
+              className="col-span-2 p-3 border mx-3 rounded-lg text-l sm:text-3xl"
               type="text"
               placeholder="Kaç ₺"
             />
@@ -91,11 +95,11 @@ export default function Home() {
             
             onClick={addItem}
               className="text-white bg-purple-heart-500 rounded-lg
-          hover:bg-slate-900 p-3 text-xl items-center justify-center inline-flex  w-full text-center mx-auto"
+          hover:bg-slate-900 p-3 text-l sm:text-3xl items-center justify-center inline-flex  w-full text-center mx-auto"
               type="sumbit"
               placeholder="Enter Item"
             >
-              <MdAddShoppingCart className="text-xl"/>
+              <MdAddShoppingCart className="text-l sm:text-3xl"/>
               <span className="ml-2 hidden sm:block" >Ekle</span>
             </button>
           </form>
@@ -103,8 +107,8 @@ export default function Home() {
           <ul>
             <li className="my-4 w-full flex justify-between border-2 border-purple rounded-lg">
               <div className="p-4  text-xl w-full flex justify-between">
-                <span className="text-sm sm:text-2xl capitalize underline">Harcama Adı</span>
-                <span className="text-sm sm:text-2xl  underline">Harcama Miktarı ₺</span>
+                <span className="text-l sm:text-2xl font-bold capitalize underline">Harcama Adı</span>
+                <span className="text-l sm:text-2xl  font-bold underline">Harcama Miktarı ₺</span>
               </div>
             </li>
             {items.map((item, id) => (
@@ -113,8 +117,8 @@ export default function Home() {
                 className="my-4 w-full flex justify-between border-2 border-purple rounded-lg"
               >
                 <div className="p-4 w-full flex justify-between">
-                  <span className="capitalize">{item.name}</span>
-                  <span>{item.price} ₺</span>
+                  <span className="capitalize text-l sm:text-3xl  ">{item.name}</span>
+                  <span className="capitalize text-l sm:text-3xl  ">{item.price} ₺</span>
                 </div>
                 <button 
                 onClick={()=> deleteItem(item.id)}
@@ -128,10 +132,10 @@ export default function Home() {
             ""
           ) : (
             <div className="flex justify-between p-3">
-              <span className="text-sm sm:text-xl font-extrabold border-b-2">Toplam:</span>
-              <span className='text-sm sm:text-xl font-extrabold border-b-2'>{(total/dolar).toFixed(2)} $</span>
-              <span className='text-sm sm:text-xl font-extrabold border-b-2'>{(total/euro).toFixed(2)} €</span>
-              <span className='text-sm sm:text-xl font-extrabold border-b-2'>{total} ₺</span>
+              <span className="text-l md:text-3xl font-extrabold border-b-2">Toplam:</span>
+              <span className='text-l md:text-3xl font-extrabold border-b-2'>{(total/dolar).toFixed(2)} $</span>
+              <span className='text-l md:text-3xl font-extrabold border-b-2'>{(total/euro).toFixed(2)} €</span>
+              <span className='text-l md:text-3xl font-extrabold border-b-2'>{total} ₺</span>
          
 
             </div>
