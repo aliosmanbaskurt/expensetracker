@@ -68,29 +68,29 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between sm:p-12 p-4">
+    <main className="flex min-h-screen flex-col items-center justify-between sm:p-12 p-4 ">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm ">
-        <h1 className="text-xl sm:text-4xl p-4 text-center">Harcamanı Hesapla</h1>
-        <div className="bg-slate-800 p-4 rounded-lg">
+        <h1 className="text-xl sm:text-4xl p-4 text-center bg-gradient-to-b from-fuchsia-800 via-fuchsia-400 to-violet-800 bg-clip-text text-transparent font-bold">Harcamanı Hesapla</h1>
+        <div className=" p-4 rounded-lg border-2 border-purple">
           <form className="grid grid-cols-6 items-center text-black">
             <input
               value={newItem.name}
               onChange={(e) => setNewItem({...newItem, name:e.target.value})}
-              className="col-span-3 p-3 border"
+              className="col-span-3 p-3  border rounded-lg"
               type="text"
               placeholder="Harcama Gir"
             />
             <input
               value={newItem.price}
               onChange={(e) => setNewItem({...newItem, price:e.target.value})}
-              className="col-span-2 p-3 border mx-3"
+              className="col-span-2 p-3 border mx-3 rounded-lg"
               type="text"
               placeholder="Kaç ₺"
             />
             <button
             
             onClick={addItem}
-              className="text-white bg-slate-950
+              className="text-white bg-purple-heart-500 rounded-lg
           hover:bg-slate-900 p-3 text-xl items-center justify-center inline-flex  w-full text-center mx-auto"
               type="sumbit"
               placeholder="Enter Item"
@@ -101,7 +101,7 @@ export default function Home() {
           </form>
 
           <ul>
-            <li className="my-4 w-full flex justify-between bg-slate-950">
+            <li className="my-4 w-full flex justify-between border-2 border-purple rounded-lg">
               <div className="p-4  text-xl w-full flex justify-between">
                 <span className="text-sm sm:text-2xl capitalize underline">Harcama Adı</span>
                 <span className="text-sm sm:text-2xl  underline">Harcama Miktarı ₺</span>
@@ -110,7 +110,7 @@ export default function Home() {
             {items.map((item, id) => (
               <li
                 key={id}
-                className="my-4 w-full flex justify-between bg-slate-950"
+                className="my-4 w-full flex justify-between border-2 border-purple rounded-lg"
               >
                 <div className="p-4 w-full flex justify-between">
                   <span className="capitalize">{item.name}</span>
@@ -118,7 +118,7 @@ export default function Home() {
                 </div>
                 <button 
                 onClick={()=> deleteItem(item.id)}
-                className="ml-8 p-4 border-l-2 border-slate-900 hover:bg-slate-900 w-16">
+                className="ml-8 p-4 border-l-2 border-purple-900 hover:text-white hover:bg-slate-900 w-16 rounded-lg">
                   X
                 </button>
               </li>
@@ -132,14 +132,14 @@ export default function Home() {
               <span className='text-sm sm:text-xl font-extrabold border-b-2'>{(total/dolar).toFixed(2)} $</span>
               <span className='text-sm sm:text-xl font-extrabold border-b-2'>{(total/euro).toFixed(2)} €</span>
               <span className='text-sm sm:text-xl font-extrabold border-b-2'>{total} ₺</span>
-           
+         
 
             </div>
           )}
         </div>
       </div>
       <div>
-        <div className="w-full flex flex-shrink-0 items-center justify-center mt-10">
+        <div className="w-full flex flex-shrink-0 items-center justify-center mt-10 text-purple-heart-800">
           <span className="font-mono">Kodlara ulaşmak için</span> 
           <Link className="ml-5" href="https://github.com/aliosmanbaskurt/expensetracker" target="self"> <FaGithub className="m-0 text-4xl items-center justify-center"/> </Link>
         </div>
