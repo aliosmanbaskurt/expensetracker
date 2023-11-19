@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between sm:p-12 p-4">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm ">
-        <h1 className="text-4xl p-4 text-center">Harcamanı Hesapla</h1>
+        <h1 className="text-xl sm:text-4xl p-4 text-center">Harcamanı Hesapla</h1>
         <div className="bg-slate-800 p-4 rounded-lg">
           <form className="grid grid-cols-6 items-center text-black">
             <input
@@ -103,8 +103,8 @@ export default function Home() {
           <ul>
             <li className="my-4 w-full flex justify-between bg-slate-950">
               <div className="p-4  text-xl w-full flex justify-between">
-                <span className="capitalize underline">Harcama Adı</span>
-                <span className="underline">Harcama Miktarı ₺</span>
+                <span className="text-sm sm:text-2xl capitalize underline">Harcama Adı</span>
+                <span className="text-sm sm:text-2xl  underline">Harcama Miktarı ₺</span>
               </div>
             </li>
             {items.map((item, id) => (
@@ -128,10 +128,10 @@ export default function Home() {
             ""
           ) : (
             <div className="flex justify-between p-3">
-              <span className="text-xl font-extrabold">Toplam:</span>
-              <span className='text-xl font-extrabold'>{(total/dolar).toFixed(2)} $</span>
-              <span className='text-xl font-extrabold'>{(total/euro).toFixed(2)} €</span>
-              <span className='text-xl font-extrabold'>{total} ₺</span>
+              <span className="text-sm sm:text-xl font-extrabold border-b-2">Toplam:</span>
+              <span className='text-sm sm:text-xl font-extrabold border-b-2'>{(total/dolar).toFixed(2)} $</span>
+              <span className='text-sm sm:text-xl font-extrabold border-b-2'>{(total/euro).toFixed(2)} €</span>
+              <span className='text-sm sm:text-xl font-extrabold border-b-2'>{total} ₺</span>
            
 
             </div>
